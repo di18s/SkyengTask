@@ -8,5 +8,6 @@
 import Foundation
 
 extension String {
-	static let cachesPath: String? = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first
+	/// "\n"
+	static let newline = "\n"
 }

@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  SkyengTestTask
+
+  Created by Дмитрий Х on 08.01.2022.
+  
+*/
+
+"SearchBarPlaceholder" = "Поиск новых слов";
+"SearchModuleInitialTitle" = "Ищите слова";
+"SearchModuleEmptyResultTitle" = "Поиск не дал результата,\nпопробуйте написать подругому";
+"SearchModuleSectionOtherWordsTitle" = "Другие слова и значения";
+
+"DefaultError" = "Something went wrong ...";
+"NetworkErrorRequestError" = "Request error with code %ld";
+"NetworkErrorUnspecifiedError" = "Failed to obtain words";
+"NetworkErrorEmptyResponse" = "No data";

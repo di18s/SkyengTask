@@ -14,6 +14,11 @@ class DownloadableImageView: UIImageView {
 	
 	private var downloadingUrl: URL?
 	
+	init() {
+		super.init(frame: .zero)
+		self.setupUI()
+	}
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		self.setupUI()
@@ -22,11 +27,6 @@ class DownloadableImageView: UIImageView {
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 		self.setupUI()
-	}
-	
-	override func layoutSubviews() {
-		super.layoutSubviews()
-		self.loaderView.center = self.center
 	}
 	
 	func setImage(_ source: URL) {
@@ -44,8 +44,14 @@ class DownloadableImageView: UIImageView {
 	}
 	
 	private func setupUI() {
-		self.addSubview(self.loaderView)
-		self.loaderView.color = .orange
+		self.addSubview(loaderView)
+		loaderView.translatesAutoresizingMaskIntoConstraints = false
+		loaderView.color = .orange
+		
+		NSLayoutConstraint.activate([
+			loaderView.centerYAnchor.constraint(equalTo: centerYAnchor),
+			loaderView.centerXAnchor.constraint(equalTo: centerXAnchor),
+		])
 	}
 }
 

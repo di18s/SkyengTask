@@ -15,7 +15,7 @@ protocol SearchModuleInteractorInput {
 
 protocol SearchModuleInteractorOutput: AnyObject {
 	func meaningsReceived(_ model: [SearchWordModel])
-	func errorReceived()
+	func errorReceived(_ errorDescription: String?)
 }
 
 final class SearchModuleInteractor {
@@ -32,7 +32,7 @@ extension SearchModuleInteractor: SearchModuleInteractorInput {
 	func findWord(_ word: String) {
 		searchService.findWord(word) { [weak self] model, error in
 			guard let self = self else { return }
-			guard error == nil else { self.presenter?.errorReceived(); return }
+			guard error == nil else { self.presenter?.errorReceived(error?.localizedDescription); return }
 			self.model = model
 			self.presenter?.meaningsReceived(model)
 		}

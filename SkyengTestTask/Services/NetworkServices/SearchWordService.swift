@@ -21,15 +21,18 @@ final class SearchWordService: BaseNetworkService, SearchWordServiceInput {
 			with: APIMethod(method: APIMethods.Words.search),
 			parameters: [APIKeys.Word.search : word]
 		)
-		performRequest(request) { [weak self] data, _, error in
+		performRequest(request) { [weak self] result in
 			guard let self = self else { return }
-			if let data = data,
-			   let model: [SearchWordModel] = self.mapObject(data) {
-				completion(model, nil)
-			} else if let error = error {
+			
+			switch result {
+			case .success(let data):
+				if let model: [SearchWordModel] = self.mapObject(data) {
+					completion(model, nil)
+				} else {
+					completion([], DataError.invalidData)
+				}
+			case .error(let error):
 				completion([], error)
-			} else {
-				completion([], nil)
 			}
 		}
 	}
