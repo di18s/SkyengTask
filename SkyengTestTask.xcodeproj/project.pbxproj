@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A85A007278C69DE00AFCC6D /* NSAttributedString+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A006278C69DE00AFCC6D /* NSAttributedString+Ext.swift */; };
+		0A85A009278C6CB000AFCC6D /* RemoteImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A008278C6CB000AFCC6D /* RemoteImageSize.swift */; };
+		0A85A00B278C6E7A00AFCC6D /* RemoteImageSourceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A00A278C6E7A00AFCC6D /* RemoteImageSourceBuilder.swift */; };
+		0A85A00D278C765000AFCC6D /* IncreaseTouchSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A00C278C765000AFCC6D /* IncreaseTouchSpaceButton.swift */; };
+		0A85A00F278C7C5E00AFCC6D /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A00E278C7C5D00AFCC6D /* AudioPlayer.swift */; };
+		0A85A015278C964D00AFCC6D /* ViewLifecycleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A014278C964D00AFCC6D /* ViewLifecycleObserver.swift */; };
+		0A85A018278C969500AFCC6D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A017278C969500AFCC6D /* BaseViewController.swift */; };
+		0A85A01A278C96F900AFCC6D /* Mirror+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A019278C96F900AFCC6D /* Mirror+Ext.swift */; };
 		0A8C6F572785CAC200E74139 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6F562785CAC200E74139 /* AppDelegate.swift */; };
 		0A8C6F5B2785CAC200E74139 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6F5A2785CAC200E74139 /* SearchViewController.swift */; };
 		0A8C6F602785CAC600E74139 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A8C6F5F2785CAC600E74139 /* Assets.xcassets */; };
@@ -38,9 +46,29 @@
 		0A8C6FBA2789DD3200E74139 /* LoadableInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FB92789DD3200E74139 /* LoadableInput.swift */; };
 		0A8C6FBC2789DD7600E74139 /* LoadableViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FBB2789DD7600E74139 /* LoadableViewInput.swift */; };
 		0A8C6FBF2789E3DF00E74139 /* SearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FBE2789E3DF00E74139 /* SearchTableCell.swift */; };
+		0A8C6FC3278AF2AD00E74139 /* DetailWordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FC2278AF2AD00E74139 /* DetailWordRouter.swift */; };
+		0A8C6FC5278AF2B800E74139 /* DetailWordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FC4278AF2B800E74139 /* DetailWordPresenter.swift */; };
+		0A8C6FC7278AF2C300E74139 /* DetailWordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FC6278AF2C300E74139 /* DetailWordInteractor.swift */; };
+		0A8C6FC9278AF2CC00E74139 /* DetailWordAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FC8278AF2CC00E74139 /* DetailWordAssembly.swift */; };
+		0A8C6FCB278AF2D800E74139 /* DetailWordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FCA278AF2D800E74139 /* DetailWordController.swift */; };
+		0A8C6FCD278AFB5900E74139 /* DetailWordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FCC278AFB5900E74139 /* DetailWordService.swift */; };
+		0A8C6FCF278B4AF200E74139 /* DetailWordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FCE278B4AF100E74139 /* DetailWordModel.swift */; };
+		0A8C6FD3278B4E5A00E74139 /* DetailWordMainInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FD2278B4E5A00E74139 /* DetailWordMainInfoCell.swift */; };
+		0A8C6FD5278B4E7E00E74139 /* DetailWordExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FD4278B4E7E00E74139 /* DetailWordExampleCell.swift */; };
+		0A8C6FD7278B4E9600E74139 /* DetailWordSimilarTranslationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FD6278B4E9600E74139 /* DetailWordSimilarTranslationCell.swift */; };
+		0A8C6FD9278B56F600E74139 /* DetailWordViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FD8278B56F600E74139 /* DetailWordViewModelBuilder.swift */; };
+		0A8C6FDB278B570B00E74139 /* DetailWordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6FDA278B570B00E74139 /* DetailWordViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A85A006278C69DE00AFCC6D /* NSAttributedString+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Ext.swift"; sourceTree = "<group>"; };
+		0A85A008278C6CB000AFCC6D /* RemoteImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageSize.swift; sourceTree = "<group>"; };
+		0A85A00A278C6E7A00AFCC6D /* RemoteImageSourceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageSourceBuilder.swift; sourceTree = "<group>"; };
+		0A85A00C278C765000AFCC6D /* IncreaseTouchSpaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseTouchSpaceButton.swift; sourceTree = "<group>"; };
+		0A85A00E278C7C5D00AFCC6D /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		0A85A014278C964D00AFCC6D /* ViewLifecycleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLifecycleObserver.swift; sourceTree = "<group>"; };
+		0A85A017278C969500AFCC6D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0A85A019278C96F900AFCC6D /* Mirror+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mirror+Ext.swift"; sourceTree = "<group>"; };
 		0A8C6F532785CAC200E74139 /* SkyengTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyengTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A8C6F562785CAC200E74139 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A8C6F5A2785CAC200E74139 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +101,18 @@
 		0A8C6FB92789DD3200E74139 /* LoadableInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableInput.swift; sourceTree = "<group>"; };
 		0A8C6FBB2789DD7600E74139 /* LoadableViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableViewInput.swift; sourceTree = "<group>"; };
 		0A8C6FBE2789E3DF00E74139 /* SearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableCell.swift; sourceTree = "<group>"; };
+		0A8C6FC2278AF2AD00E74139 /* DetailWordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordRouter.swift; sourceTree = "<group>"; };
+		0A8C6FC4278AF2B800E74139 /* DetailWordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordPresenter.swift; sourceTree = "<group>"; };
+		0A8C6FC6278AF2C300E74139 /* DetailWordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordInteractor.swift; sourceTree = "<group>"; };
+		0A8C6FC8278AF2CC00E74139 /* DetailWordAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordAssembly.swift; sourceTree = "<group>"; };
+		0A8C6FCA278AF2D800E74139 /* DetailWordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordController.swift; sourceTree = "<group>"; };
+		0A8C6FCC278AFB5900E74139 /* DetailWordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordService.swift; sourceTree = "<group>"; };
+		0A8C6FCE278B4AF100E74139 /* DetailWordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordModel.swift; sourceTree = "<group>"; };
+		0A8C6FD2278B4E5A00E74139 /* DetailWordMainInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordMainInfoCell.swift; sourceTree = "<group>"; };
+		0A8C6FD4278B4E7E00E74139 /* DetailWordExampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordExampleCell.swift; sourceTree = "<group>"; };
+		0A8C6FD6278B4E9600E74139 /* DetailWordSimilarTranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordSimilarTranslationCell.swift; sourceTree = "<group>"; };
+		0A8C6FD8278B56F600E74139 /* DetailWordViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordViewModelBuilder.swift; sourceTree = "<group>"; };
+		0A8C6FDA278B570B00E74139 /* DetailWordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +126,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A85A016278C968700AFCC6D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A85A017278C969500AFCC6D /* BaseViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		0A8C6F4A2785CAC100E74139 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +168,7 @@
 		0A8C6F692785CE3F00E74139 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0A8C6FC1278AF28400E74139 /* DetailWordModule */,
 				0A8C6F6A2785CE7700E74139 /* SearchModule */,
 			);
 			path = Modules;
@@ -140,13 +189,14 @@
 		0A8C6F732785CF3D00E74139 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				0A8C6FB62789D44D00E74139 /* Utilities */,
-				0A8C6FA1278870C300E74139 /* View */,
-				0A8C6F9C2788704B00E74139 /* Helpers */,
 				0A8C6F962788450A00E74139 /* Builders */,
+				0A85A016278C968700AFCC6D /* Controllers */,
 				0A8C6F7C2786FF8E00E74139 /* Enum and types */,
 				0A8C6F792786F55E00E74139 /* Extension */,
+				0A8C6F9C2788704B00E74139 /* Helpers */,
 				0A8C6F742785CF4800E74139 /* Routers */,
+				0A8C6FB62789D44D00E74139 /* Utilities */,
+				0A8C6FA1278870C300E74139 /* View */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -174,6 +224,7 @@
 				0A8C6F8727870C3700E74139 /* NetworkRequest.swift */,
 				0A8C6F8D2787107B00E74139 /* NetworkServicesAssembly.swift */,
 				0A8C6F8F278710C400E74139 /* SearchWordService.swift */,
+				0A8C6FCC278AFB5900E74139 /* DetailWordService.swift */,
 			);
 			path = NetworkServices;
 			sourceTree = "<group>";
@@ -182,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				0A8C6F9F2788708800E74139 /* String+Ext.swift */,
+				0A85A019278C96F900AFCC6D /* Mirror+Ext.swift */,
+				0A85A006278C69DE00AFCC6D /* NSAttributedString+Ext.swift */,
 				0A8C6FA72789D18700E74139 /* UITableView+Ext.swift */,
 			);
 			path = Extension;
@@ -195,6 +248,7 @@
 				0A8C6F812787044400E74139 /* APIMethod.swift */,
 				0A8C6F912787192C00E74139 /* APIKeys.swift */,
 				0A8C6F832787048A00E74139 /* APIConfiguration.swift */,
+				0A85A008278C6CB000AFCC6D /* RemoteImageSize.swift */,
 			);
 			path = "Enum and types";
 			sourceTree = "<group>";
@@ -204,6 +258,7 @@
 			children = (
 				0A8C6F8A27870D1400E74139 /* Trait */,
 				0A8C6FB92789DD3200E74139 /* LoadableInput.swift */,
+				0A85A014278C964D00AFCC6D /* ViewLifecycleObserver.swift */,
 				0A8C6FBB2789DD7600E74139 /* LoadableViewInput.swift */,
 			);
 			path = Protocols;
@@ -222,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				0A8C6F942787200000E74139 /* SearchWordModel.swift */,
+				0A8C6FCE278B4AF100E74139 /* DetailWordModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,6 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				0A8C6F9A2788455600E74139 /* SearchWordViewModelBuilder.swift */,
+				0A8C6FD8278B56F600E74139 /* DetailWordViewModelBuilder.swift */,
+				0A85A00A278C6E7A00AFCC6D /* RemoteImageSourceBuilder.swift */,
 			);
 			path = Builders;
 			sourceTree = "<group>";
@@ -238,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				0A8C6F982788453F00E74139 /* SearchWordViewModel.swift */,
+				0A8C6FDA278B570B00E74139 /* DetailWordViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -246,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				0A8C6F9D2788706400E74139 /* Cache.swift */,
+				0A85A00E278C7C5D00AFCC6D /* AudioPlayer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -254,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				0A8C6FA3278870F800E74139 /* DownloadableImageView.swift */,
+				0A85A00C278C765000AFCC6D /* IncreaseTouchSpaceButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,6 +343,37 @@
 				0A8C6FB32789D3E900E74139 /* Localizable.strings */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		0A8C6FC1278AF28400E74139 /* DetailWordModule */ = {
+			isa = PBXGroup;
+			children = (
+				0A8C6FC2278AF2AD00E74139 /* DetailWordRouter.swift */,
+				0A8C6FC4278AF2B800E74139 /* DetailWordPresenter.swift */,
+				0A8C6FC6278AF2C300E74139 /* DetailWordInteractor.swift */,
+				0A8C6FC8278AF2CC00E74139 /* DetailWordAssembly.swift */,
+				0A8C6FD0278B4E0200E74139 /* View */,
+			);
+			path = DetailWordModule;
+			sourceTree = "<group>";
+		};
+		0A8C6FD0278B4E0200E74139 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A8C6FCA278AF2D800E74139 /* DetailWordController.swift */,
+				0A8C6FD1278B4E3B00E74139 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A8C6FD1278B4E3B00E74139 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0A8C6FD2278B4E5A00E74139 /* DetailWordMainInfoCell.swift */,
+				0A8C6FD4278B4E7E00E74139 /* DetailWordExampleCell.swift */,
+				0A8C6FD6278B4E9600E74139 /* DetailWordSimilarTranslationCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,33 +449,53 @@
 			files = (
 				0A8C6FA4278870F800E74139 /* DownloadableImageView.swift in Sources */,
 				0A8C6F8827870C3700E74139 /* NetworkRequest.swift in Sources */,
+				0A8C6FD9278B56F600E74139 /* DetailWordViewModelBuilder.swift in Sources */,
+				0A85A007278C69DE00AFCC6D /* NSAttributedString+Ext.swift in Sources */,
 				0A8C6F722785CEC400E74139 /* SearchModuleRouter.swift in Sources */,
 				0A8C6FBA2789DD3200E74139 /* LoadableInput.swift in Sources */,
+				0A85A015278C964D00AFCC6D /* ViewLifecycleObserver.swift in Sources */,
 				0A8C6F702785CEB500E74139 /* SearchModuleAssembly.swift in Sources */,
+				0A85A00D278C765000AFCC6D /* IncreaseTouchSpaceButton.swift in Sources */,
 				0A8C6FBC2789DD7600E74139 /* LoadableViewInput.swift in Sources */,
+				0A8C6FCB278AF2D800E74139 /* DetailWordController.swift in Sources */,
 				0A8C6F7E2786FFA800E74139 /* APIMethods.swift in Sources */,
 				0A8C6F9B2788455600E74139 /* SearchWordViewModelBuilder.swift in Sources */,
 				0A8C6FA62788712D00E74139 /* DownloadableCacheableTrait.swift in Sources */,
 				0A8C6F802787040900E74139 /* APIVersion.swift in Sources */,
 				0A8C6F90278710C400E74139 /* SearchWordService.swift in Sources */,
 				0A8C6F762785CF5400E74139 /* BaseRouter.swift in Sources */,
+				0A8C6FD5278B4E7E00E74139 /* DetailWordExampleCell.swift in Sources */,
+				0A85A00B278C6E7A00AFCC6D /* RemoteImageSourceBuilder.swift in Sources */,
 				0A8C6F992788453F00E74139 /* SearchWordViewModel.swift in Sources */,
+				0A8C6FD7278B4E9600E74139 /* DetailWordSimilarTranslationCell.swift in Sources */,
 				0A8C6F922787192C00E74139 /* APIKeys.swift in Sources */,
 				0A8C6FA02788708800E74139 /* String+Ext.swift in Sources */,
+				0A8C6FCF278B4AF200E74139 /* DetailWordModel.swift in Sources */,
+				0A8C6FDB278B570B00E74139 /* DetailWordViewModel.swift in Sources */,
 				0A8C6F862787050400E74139 /* BaseNetworkService.swift in Sources */,
 				0A8C6F952787200000E74139 /* SearchWordModel.swift in Sources */,
 				0A8C6F6C2785CE9800E74139 /* SearchModulePresenter.swift in Sources */,
 				0A8C6F9E2788706400E74139 /* Cache.swift in Sources */,
+				0A85A018278C969500AFCC6D /* BaseViewController.swift in Sources */,
+				0A8C6FCD278AFB5900E74139 /* DetailWordService.swift in Sources */,
+				0A85A00F278C7C5E00AFCC6D /* AudioPlayer.swift in Sources */,
 				0A8C6F5B2785CAC200E74139 /* SearchViewController.swift in Sources */,
 				0A8C6F842787048A00E74139 /* APIConfiguration.swift in Sources */,
 				0A8C6F8E2787107B00E74139 /* NetworkServicesAssembly.swift in Sources */,
 				0A8C6F8C27870D2800E74139 /* ShowErrorTrait.swift in Sources */,
 				0A8C6FB82789D45B00E74139 /* StringUtilities.swift in Sources */,
+				0A85A01A278C96F900AFCC6D /* Mirror+Ext.swift in Sources */,
 				0A8C6F6E2785CEA900E74139 /* SearchModuleInteractor.swift in Sources */,
+				0A8C6FC3278AF2AD00E74139 /* DetailWordRouter.swift in Sources */,
 				0A8C6FA82789D18700E74139 /* UITableView+Ext.swift in Sources */,
+				0A8C6FC5278AF2B800E74139 /* DetailWordPresenter.swift in Sources */,
+				0A8C6FC9278AF2CC00E74139 /* DetailWordAssembly.swift in Sources */,
 				0A8C6F822787044400E74139 /* APIMethod.swift in Sources */,
 				0A8C6FBF2789E3DF00E74139 /* SearchTableCell.swift in Sources */,
+				0A8C6FD3278B4E5A00E74139 /* DetailWordMainInfoCell.swift in Sources */,
 				0A8C6F572785CAC200E74139 /* AppDelegate.swift in Sources */,
+				0A85A009278C6CB000AFCC6D /* RemoteImageSize.swift in Sources */,
+				0A8C6FC7278AF2C300E74139 /* DetailWordInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

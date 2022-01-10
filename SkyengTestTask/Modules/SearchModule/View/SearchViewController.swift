@@ -12,40 +12,58 @@ protocol SearchViewControllerInput: LoadableInput {
 	func updateView(_ viewModel: [SectionViewModel<SearchWordViewModel>])
 	func updateMeanings(by indexPaths: [IndexPath], action: TableInsertionAction)
 	func reloadTable()
+	func updateResultLabel(with text: String)
 }
 
-protocol SearchViewControllerOutput: AnyObject {
-	func viewDidLoad()
+protocol SearchViewControllerOutput: ViewLifecycleObserver {
 	func meaningDidSelect(by indexPath: IndexPath)
 	func searchTextDidChange(_ text: String)
 }
 
 //MARK: SearchViewController
-final class SearchViewController: UIViewController, LoadableViewInput {
-	var presenter: SearchViewControllerOutput!
+final class SearchViewController: BaseViewController, LoadableViewInput {
+	var output: SearchViewControllerOutput!
 	
 	private(set) var activityIndicator: Loader!
 	private var searchBar: UISearchBar!
 	private var tableView: UITableView!
-	private var resultTitleLabl: UILabel!
+	private var resultTitleLabel: UILabel!
 	
 	private var sections: [SearchModuleTableSection] = []
 	private var viewModel: [SectionViewModel<SearchWordViewModel>] = []
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+	override func setupView() {
 		setupUI()
-		presenter.viewDidLoad()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+		navigationController?.navigationBar.isHidden = false
+		
+		tabBarController?.tabBar.isHidden = false
 	}
 	
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		activityIndicator.center = view.center
 	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+	}
 }
 
 //MARK: SearchViewControllerInput
 extension SearchViewController: SearchViewControllerInput {
+	func updateResultLabel(with text: String) {
+		resultTitleLabel.text = text
+	}
+	
 	func updateSections(_ sections: [SearchModuleTableSection]) {
 		self.sections = sections
 	}
@@ -135,7 +153,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		presenter.meaningDidSelect(by: indexPath)
+		output.meaningDidSelect(by: indexPath)
 	}
 }
 
@@ -146,7 +164,7 @@ extension SearchViewController: UISearchBarDelegate {
 	}
 	
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-		presenter.searchTextDidChange(searchText)
+		output.searchTextDidChange(searchText)
 	}
 	
 	func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -166,6 +184,21 @@ extension SearchViewController: UISearchBarDelegate {
 
 //MARK: private extension
 private extension SearchViewController {
+	@objc func keyboardWasShown(notification: Notification) {
+		let info = notification.userInfo! as NSDictionary
+		let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
+		let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: kbSize.height, right: 0.0)
+		
+		tableView?.contentInset = contentInsets
+		tableView?.scrollIndicatorInsets = contentInsets
+	}
+	
+	@objc func keyboardWillBeHidden(notification: Notification) {
+		let contentInsets = UIEdgeInsets.zero
+		tableView?.contentInset = contentInsets
+		tableView?.scrollIndicatorInsets = contentInsets
+	}
+	
 	func setupUI() {
 		view.backgroundColor = .white
 		searchBar = UISearchBar()
@@ -185,6 +218,14 @@ private extension SearchViewController {
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 		tableView.register(cells: [SearchTableCell.self])
 		
+		resultTitleLabel = UILabel()
+		resultTitleLabel.numberOfLines = 0
+		resultTitleLabel.textAlignment = .center
+		resultTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+		resultTitleLabel.font = .systemFont(ofSize: 17)
+		resultTitleLabel.textColor = .lightGray
+		view.addSubview(resultTitleLabel)
+		
 		activityIndicator = UIActivityIndicatorView()
 		activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
 		activityIndicator.tintColor = .orange
@@ -196,6 +237,10 @@ private extension SearchViewController {
 			tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 			tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
 			tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+			
+			resultTitleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+			resultTitleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+			resultTitleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40)
 		])
 	}
 	

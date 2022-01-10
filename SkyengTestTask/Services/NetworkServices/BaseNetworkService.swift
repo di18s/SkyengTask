@@ -12,6 +12,10 @@ enum Result {
 	case error(NetworkError)
 }
 
+protocol Error {
+	var localizedDescription: String { get }
+}
+
 enum DataError: Error {
 	case invalidData
 	

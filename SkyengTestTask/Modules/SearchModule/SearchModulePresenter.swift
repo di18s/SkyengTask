@@ -15,8 +15,12 @@ enum TableInsertionAction {
 	case insert, delete
 }
 
+enum SearchScreenMessageType {
+	case emptyResponse, initial
+}
+
 final class SearchModulePresenter {
-	private let view: SearchViewControllerInput
+	private weak var view: SearchViewControllerInput!
 	private let interactor: SearchModuleInteractorInput
 	private let router: SearchModuleRouterInput
 	private let viewModelBuilder: SearchWordViewModelBuilderType
@@ -35,12 +39,22 @@ final class SearchModulePresenter {
 		self.router = router
 		self.viewModelBuilder = viewModelBuilder
 	}
+	
+	func makeResultLabelText(by type: SearchScreenMessageType) -> String {
+		switch type {
+		case .emptyResponse:
+			return "Для этого слова нет переводов"
+		case .initial:
+			return "Ищите перевод слов"
+		}
+	}
 }
 
 //MARK: ViewOutput
 extension SearchModulePresenter: SearchViewControllerOutput {
 	func viewDidLoad() {
 		view.setLoading(false)
+		view.updateResultLabel(with: makeResultLabelText(by: .initial))
 		view.updateSections(sections)
 	}
 	
@@ -67,7 +81,7 @@ extension SearchModulePresenter: SearchViewControllerOutput {
 			view.updateView(viewModel)
 			view.updateMeanings(by: indexPaths, action: action)
 		} else {
-			//to detail
+			router.showDetailWord(by: String(meaning.id))
 		}
 	}
 	
@@ -90,6 +104,11 @@ extension SearchModulePresenter: SearchModuleInteractorOutput {
 		viewModel = viewModelBuilder.buildSectionViewModel(from: model)
 		view.updateView(viewModel)
 		view.reloadTable()
+		var text = ""
+		if model.isEmpty {
+			text = makeResultLabelText(by: .emptyResponse)
+		}
+		view.updateResultLabel(with: text)
 	}
 	
 	func errorReceived(_ errorDescription: String?) {

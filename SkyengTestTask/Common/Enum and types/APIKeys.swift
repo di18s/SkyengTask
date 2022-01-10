@@ -10,5 +10,6 @@ import Foundation
 enum APIKeys {
 	enum Word {
 		static let search = "search"
+		static let ids = "ids"
 	}
 }

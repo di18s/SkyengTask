@@ -14,11 +14,14 @@ protocol URLPathConvertible {
 enum APIMethods {
 	enum Words: URLPathConvertible {
 		case search
+		case meanings
 		
 		func pathString() -> String {
 			switch self {
 			case .search:
 				return "/words/search"
+			case .meanings:
+				return "/meanings"
 			}
 		}
 	}

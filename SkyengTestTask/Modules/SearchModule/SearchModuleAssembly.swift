@@ -21,8 +21,8 @@ enum SearchModuleAssembly {
 		let presenter = SearchModulePresenter(view: view,
 											  interactor: interactor,
 											  router: router,
-											  viewModelBuilder: SearchWordViewModelBuilder())
-		view.presenter = presenter
+											  viewModelBuilder: SearchWordViewModelBuilder(remoteImageSourceBuilder: RemoteImageSourceBuilder()))
+		view.output = presenter
 		interactor.presenter = presenter
 	}
 }

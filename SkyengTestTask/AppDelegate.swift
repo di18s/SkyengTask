@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		window = UIWindow()
 		window?.frame = UIScreen.main.bounds
 		window?.rootViewController = UINavigationController(rootViewController: SearchModuleAssembly.create())
+		if #available(iOS 13.0, *) {
+			window?.overrideUserInterfaceStyle = .light
+		}
 		window?.makeKeyAndVisible()
 		return true
 	}

@@ -15,3 +15,5 @@
 "NetworkErrorRequestError" = "Request error with code %ld";
 "NetworkErrorUnspecifiedError" = "Failed to obtain words";
 "NetworkErrorEmptyResponse" = "No data";
+
+"DetailWordSimilarTranslations" = "Другие переводы";

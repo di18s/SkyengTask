@@ -1,17 +1,17 @@
 //
-//  SearchModuleRouter.swift
+//  DetailWordRouter.swift
 //  SkyengTestTask
 //
-//  Created by Дмитрий Х on 05.01.2022.
+//  Created by Дмитрий Х on 09.01.2022.
 //
 
 import UIKit
 
-protocol SearchModuleRouterInput: ShowErrorTraitInput {
+protocol DetailWordRouterInput: ShowErrorTraitInput {
 	func showDetailWord(by ids: String)
 }
 
-final class SearchModuleRouter: BaseRouter, SearchModuleRouterInput, ShowErrorTrait {
+final class DetailWordRouter: BaseRouter, DetailWordRouterInput, ShowErrorTrait {
 	func showDetailWord(by ids: String) {
 		let vc = DetailWordAssembly.create()
 		(vc.moduleInput as? DetailWordModuleInput)?.configWith(ids: ids)

@@ -14,6 +14,11 @@ protocol SearchWordViewModelBuilderType {
 }
 
 final class SearchWordViewModelBuilder: SearchWordViewModelBuilderType {
+	private let remoteImageSourceBuilder: RemoteImageSourceBuilderType
+	
+	init(remoteImageSourceBuilder: RemoteImageSourceBuilderType) {
+		self.remoteImageSourceBuilder = remoteImageSourceBuilder
+	}
 	
 	func buildSectionViewModel(from model: [SearchWordModel]) -> [SectionViewModel<SearchWordViewModel>] {
 		
@@ -27,7 +32,7 @@ final class SearchWordViewModelBuilder: SearchWordViewModelBuilderType {
 		let sectionMeanings: [SearchWordViewModel] = [
 			.init(id: firstMeaning.id,
 				  parentId: firstParent.id,
-				  previewUrl: "https:" + firstMeaning.previewUrl,
+				  previewUrl: remoteImageSourceBuilder.prepareImageUrl(from: firstMeaning.previewUrl),
 				  title: firstParent.text,
 				  subtitle: firstMeaning.translation.text)
 		]
@@ -46,7 +51,7 @@ final class SearchWordViewModelBuilder: SearchWordViewModelBuilderType {
 				previewImage = "words_stack_icon"
 				cornerClipType = .top
 			} else if let img = $0.meanings.first?.previewUrl {
-				previewImage = "https:" + img
+				previewImage = remoteImageSourceBuilder.prepareImageUrl(from: img)
 			}
 			let subtitle = $0.meanings.reduce(into: "") { result, model in
 				if result.isEmpty {
@@ -71,7 +76,7 @@ final class SearchWordViewModelBuilder: SearchWordViewModelBuilderType {
 		let meanings: [SearchWordViewModel] = model.meanings.map {
 			return .init(id: $0.id,
 						 parentId: model.id,
-						 previewUrl: "https:" + $0.previewUrl,
+						 previewUrl: remoteImageSourceBuilder.prepareImageUrl(from: $0.previewUrl),
 						 title: $0.translation.text,
 						 cornerClipType: .middle,
 						 isExpanded: true)
