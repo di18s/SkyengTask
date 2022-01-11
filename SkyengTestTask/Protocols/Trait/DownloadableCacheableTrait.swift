@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DownloadableCacheableTrait {
+protocol DownloadableCacheableTrait: AnyObject {
 	var cache: Cache<URL, Data> { get }
 	var session: URLSession { get }
 }
@@ -18,8 +18,11 @@ extension DownloadableCacheableTrait {
 			completion(data, url)
 			return
 		}
-		session.dataTask(with: url) { (data, response, _) in
-			guard let data = data, let url = response?.url else { return }
+		session.dataTask(with: url) { [weak self] (data, response, _) in
+			guard let self = self,
+				  let data = data,
+				  let url = response?.url
+			else { return }
 			self.cache[url] = data
 			completion(data, url)
 		}.resume()

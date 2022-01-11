@@ -50,7 +50,6 @@ final class SearchTableCell: UITableViewCell {
 			background.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
 		case .middle, .without:
 			background.layer.cornerRadius = 0
-			background.layer.maskedCorners = []
 		case .bottom:
 			background.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
 		}

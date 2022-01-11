@@ -10,16 +10,16 @@ import UIKit
 protocol ShowErrorTraitInput {
 	func showError(message: String, title: String, okTitle: String)
 	func showError(message: String, title: String)
-	func showError(_ message: String)
+	func showError(_ message: String?)
 }
 
-protocol ShowErrorTrait {
-	var transitionHandler: UIViewController? { get }
+protocol ShowErrorTrait where Self: BaseRouter {
+
 }
 
 extension ShowErrorTrait {
-	func showError(_ message: String) {
-		showError(message: message, title: "Error")
+	func showError(_ message: String?) {
+		showError(message: message ?? ~"DefaultError", title: "Error")
 	}
 	
 	func showError(message: String, title: String) {

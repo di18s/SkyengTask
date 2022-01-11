@@ -86,6 +86,6 @@ extension DetailWordPresenter: DetailWordInteractorOutput {
 	
 	func errorReceived(_ errorDescription: String?) {
 		view.setLoading(false)
-		router.showError(errorDescription ?? ~"DefaultError")
+		router.showError(errorDescription)
 	}
 }

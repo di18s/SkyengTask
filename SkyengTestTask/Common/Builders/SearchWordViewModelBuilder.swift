@@ -46,10 +46,8 @@ final class SearchWordViewModelBuilder: SearchWordViewModelBuilderType {
 	func buildMeaningViewModel(from model: [SearchWordModel]) -> [SearchWordViewModel] {
 		return model.map {
 			var previewImage: String = ""
-			var cornerClipType: CornerClipType = .without
 			if $0.meanings.count > 1 {
 				previewImage = "words_stack_icon"
-				cornerClipType = .top
 			} else if let img = $0.meanings.first?.previewUrl {
 				previewImage = remoteImageSourceBuilder.prepareImageUrl(from: img)
 			}
@@ -66,7 +64,7 @@ final class SearchWordViewModelBuilder: SearchWordViewModelBuilderType {
 				previewUrl: previewImage,
 				title: $0.text,
 				subtitle: subtitle,
-				cornerClipType: cornerClipType,
+				cornerClipType: .without,
 				childCount: $0.meanings.count
 			)
 		}

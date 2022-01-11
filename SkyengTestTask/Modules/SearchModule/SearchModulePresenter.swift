@@ -77,6 +77,7 @@ extension SearchModulePresenter: SearchViewControllerOutput {
 				viewModel[indexPath.section].list.insert(contentsOf: meaningsViewModel, at: indexPath.row + 1)
 			}
 			let action: TableInsertionAction = meaning.isExpanded ? .delete : .insert
+			meaning.cornerClipType =  meaning.isExpanded ? .without : .top
 			meaning.isExpanded.toggle()
 			view.updateView(viewModel)
 			view.updateMeanings(by: indexPaths, action: action)
@@ -89,6 +90,15 @@ extension SearchModulePresenter: SearchViewControllerOutput {
 		guard text != searchText else { return }
 		searchText = text
 		debounceTimer?.invalidate()
+		
+		guard text.isEmpty == false else {
+			viewModel = []
+			view.updateView([])
+			view.reloadTable()
+			view.updateResultLabel(with: makeResultLabelText(by: .initial))
+			return
+		}
+		
 		debounceTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [weak self] timer in
 			guard let self = self else { return }
 			self.view.setLoading(true)
@@ -113,7 +123,6 @@ extension SearchModulePresenter: SearchModuleInteractorOutput {
 	
 	func errorReceived(_ errorDescription: String?) {
 		view.setLoading(false)
-		router.showError(errorDescription ?? ~"DefaultError")
+		router.showError(errorDescription)
 	}
-	
 }

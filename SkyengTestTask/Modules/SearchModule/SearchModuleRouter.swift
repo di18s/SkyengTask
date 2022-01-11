@@ -5,16 +5,12 @@
 //  Created by Дмитрий Х on 05.01.2022.
 //
 
-import UIKit
+import Foundation
 
-protocol SearchModuleRouterInput: ShowErrorTraitInput {
-	func showDetailWord(by ids: String)
+protocol SearchModuleRouterInput: ShowErrorTraitInput, DetailWordPresentableTraitInput {
+
 }
 
-final class SearchModuleRouter: BaseRouter, SearchModuleRouterInput, ShowErrorTrait {
-	func showDetailWord(by ids: String) {
-		let vc = DetailWordAssembly.create()
-		(vc.moduleInput as? DetailWordModuleInput)?.configWith(ids: ids)
-		transitionHandler?.navigationController?.pushViewController(vc, animated: true)
-	}
+final class SearchModuleRouter: BaseRouter, SearchModuleRouterInput, ShowErrorTrait, DetailWordPresentableTrait {
+
 }

@@ -15,6 +15,7 @@
 		0A85A015278C964D00AFCC6D /* ViewLifecycleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A014278C964D00AFCC6D /* ViewLifecycleObserver.swift */; };
 		0A85A018278C969500AFCC6D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A017278C969500AFCC6D /* BaseViewController.swift */; };
 		0A85A01A278C96F900AFCC6D /* Mirror+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A019278C96F900AFCC6D /* Mirror+Ext.swift */; };
+		0A85A028278E1E7C00AFCC6D /* DetailWordPresentableTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A027278E1E7C00AFCC6D /* DetailWordPresentableTrait.swift */; };
 		0A8C6F572785CAC200E74139 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6F562785CAC200E74139 /* AppDelegate.swift */; };
 		0A8C6F5B2785CAC200E74139 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C6F5A2785CAC200E74139 /* SearchViewController.swift */; };
 		0A8C6F602785CAC600E74139 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A8C6F5F2785CAC600E74139 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		0A85A014278C964D00AFCC6D /* ViewLifecycleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLifecycleObserver.swift; sourceTree = "<group>"; };
 		0A85A017278C969500AFCC6D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0A85A019278C96F900AFCC6D /* Mirror+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mirror+Ext.swift"; sourceTree = "<group>"; };
+		0A85A027278E1E7C00AFCC6D /* DetailWordPresentableTrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordPresentableTrait.swift; sourceTree = "<group>"; };
 		0A8C6F532785CAC200E74139 /* SkyengTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyengTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A8C6F562785CAC200E74139 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A8C6F5A2785CAC200E74139 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			children = (
 				0A8C6F8B27870D2800E74139 /* ShowErrorTrait.swift */,
 				0A8C6FA52788712D00E74139 /* DownloadableCacheableTrait.swift */,
+				0A85A027278E1E7C00AFCC6D /* DetailWordPresentableTrait.swift */,
 			);
 			path = Trait;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				0A8C6F862787050400E74139 /* BaseNetworkService.swift in Sources */,
 				0A8C6F952787200000E74139 /* SearchWordModel.swift in Sources */,
 				0A8C6F6C2785CE9800E74139 /* SearchModulePresenter.swift in Sources */,
+				0A85A028278E1E7C00AFCC6D /* DetailWordPresentableTrait.swift in Sources */,
 				0A8C6F9E2788706400E74139 /* Cache.swift in Sources */,
 				0A85A018278C969500AFCC6D /* BaseViewController.swift in Sources */,
 				0A8C6FCD278AFB5900E74139 /* DetailWordService.swift in Sources */,
